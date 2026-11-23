@@ -34,7 +34,17 @@ fun main() {
 
 fun createFile(todo: String) {
     val f = File("main.txt")
+    IsCreated.created(f)
     f.writeText(todo)
+}
+
+object IsCreated {
+    fun created(file: File) {
+
+        if (file.exists()) {
+            PrintLines.printLines("Created Already")
+        }
+    }
 }
 
 object PrintLines {
